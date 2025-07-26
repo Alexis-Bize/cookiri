@@ -56,7 +56,9 @@ const trackingPatterns = [
   /^twclid$/, // Twitter conversion tracking
   /^yclid$/, // Yandex attribution
   // General cross-site tracking patterns
-  /^_?trk[_-]/, /^_?track[_-]/, /^_?pixel[_-]/
+  /^_?trk[_-]/, /^_?track[_-]/, /^_?pixel[_-]/,
+  // DataFast (datafa.st)
+  /^datafast_(session|visitor)_id$/
 ];
 
 // prettier-ignore
