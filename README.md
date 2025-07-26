@@ -58,10 +58,12 @@ A Chrome extension that allows you to easily track and manage your browser's coo
 ### Building
 
 ```bash
-npm run build    # Build for production
-npm run dev      # Start development server
-npm run watch    # Watch for changes and rebuild
+pnpm run build    # Build for production
+pnpm run dev      # Start development server
+pnpm run watch    # Watch for changes and rebuild
 ```
+
+Alternatively, you could, of course, use `npm`, `yarn`, or whatever.
 
 ## Permissions
 
