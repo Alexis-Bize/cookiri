@@ -10,7 +10,9 @@ const trackingPatterns = [
   // Google Analytics / Ads (cross-site tracking)
   /^_ga/, /^_gid/, /^_gat/, /^_gcl_au/, /^_gcl_aw/, /^_gac/, /^_dc_gtm_/, 
   /^NID$/, /^1P_JAR$/, /^ANID$/, /^IDE$/, /^test_cookie$/,
-  // Facebook Pixel (cross-site tracking)
+  /^FPAU/, /^FPID/, // Google Analytics 4 & Universal Analytics
+  /^__gads$/, /^__gpi$/, // DoubleClick (Google advertising)
+  // Facebook Pixel (cross-site tracking)  
   /^_fbp$/, /^_fbc$/,
   // LinkedIn Insight Tag (cross-site tracking)
   /^li_/, /^lms_/,
@@ -24,8 +26,24 @@ const trackingPatterns = [
   /^rdt_cid$/,
   // Snapchat Pixel (cross-site tracking)
   /^_scid$/,
-  // Google Analytics 4 & Universal Analytics
-  /^FPAU/, /^FPID/,
+  // Twitter/X Ads (non-essential only)
+  /^personalization_id$/, // Ad personalization
+  // Adobe Analytics/Experience Cloud (tracking)
+  /^s_cc$/, /^s_sq$/, /^s_vi$/, /^s_fid$/, /^AMCV_/, /^AMCVS_/,
+  // Hotjar (behavioral analytics)
+  /^_hjid$/, /^_hjFirstSeen$/, /^_hjUserAttributesHash$/, /^_hjCachedUserAttributes$/,
+  // PostHog (analytics tracking)
+  /^ph_/, /^posthog/,
+  // Mixpanel (analytics tracking)
+  /^mp_/, /^__mps$/, /^__mpq$/,
+  // Amplitude (analytics tracking)
+  /^amplitude_/, /^AMP_/,
+  // Criteo (retargeting/advertising)
+  /^cto_/, /^criteo/,
+  // Yandex Analytics (tracking)
+  /^_ym_uid/, /^_ym_d/, /^_ym_isad/, /^_ym_visorc/,
+  // Baidu Analytics (tracking)
+  /^BAIDUID/, /^HMACCOUNT/,
   // Third-party analytics that track across sites
   /^hubspotutk$/, /^__hstc$/,  // HubSpot cross-domain tracking
   /^_mkto_trk$/, // Marketo cross-domain tracking
@@ -33,6 +51,10 @@ const trackingPatterns = [
   /^nielsenId$/, // Nielsen cross-site measurement
   // URL tracking parameters (cross-site attribution)
   /^utm_/, /^gclid$/, /^fbclid$/, /^msclkid$/, /^dclid$/, /^ttclid$/,
+  /^wbraid$/, /^gbraid$/, // Google Ads enhanced conversions
+  /^li_fat_id$/, // LinkedIn attribution
+  /^twclid$/, // Twitter conversion tracking
+  /^yclid$/, // Yandex attribution
   // General cross-site tracking patterns
   /^_?trk[_-]/, /^_?track[_-]/, /^_?pixel[_-]/
 ];
