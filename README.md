@@ -1,6 +1,6 @@
 # Cookiri - Chrome Extension
 
-![title](.github/assets/preview.jpg)
+![Cookiri](.github/assets/preview.jpg)
 
 A Chrome extension that allows you to easily track and manage your browser's cookies, and highlight trackers.
 
