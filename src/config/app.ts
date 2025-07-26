@@ -7,7 +7,7 @@
 
 const config = {
   name: 'Cookiri',
-  description: "Easily track & manage your brower's cookies.",
+  description: "Easily track and manage your browser's cookies, and highlight trackers",
 } as const;
 
 export default config;

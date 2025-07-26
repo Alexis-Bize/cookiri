@@ -1,6 +1,6 @@
 {
   "name": "cookiri-extension",
-  "description": "Easily track & manage your brower's cookies.",
+  "description": "Easily track and manage your browser's cookies, and highlight trackers",
   "private": true,
   "version": "0.0.0",
   "type": "module",

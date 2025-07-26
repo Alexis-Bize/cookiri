@@ -2,7 +2,10 @@
 
 ![title](.github/assets/logo.png)
 
-A Chrome extension that allows you to easily track & manage your brower's cookies.
+A Chrome extension that allows you to easily track and manage your browser's cookies, and highlight trackers.
+
+> [!IMPORTANT]
+> This extension is currently in beta and not yet published. Please refer to the documentation for instructions on how to build and install it.
 
 ## Features
 

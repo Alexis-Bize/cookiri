@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Cookiri",
   "version": "1.0.0",
-  "description": "Easily track & manage your brower's cookies.",
+  "description": "Easily track and manage your browser's cookies, and highlight trackers",
   "permissions": ["cookies", "storage", "activeTab", "scripting"],
   "host_permissions": ["<all_urls>"],
   "action": {
