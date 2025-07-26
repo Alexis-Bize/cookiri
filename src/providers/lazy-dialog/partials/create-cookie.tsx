@@ -13,6 +13,8 @@ import { safeAsync } from '@zeny/safe-async';
 import { useEffect, useState } from 'react';
 import { CheckIcon, RotateCcwIcon, XIcon } from 'lucide-react';
 import { cn } from '@cookiri-extension/shared/modules/utilities';
+import { useLazyDialog } from '@cookiri-extension/providers/hooks/use-lazy-dialog';
+
 import {
   DialogClose,
   DialogContent,
@@ -21,7 +23,6 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@cookiri-extension/components/ui/dialog';
-import { useLazyDialog } from '@cookiri-extension/providers/hooks/use-lazy-dialog';
 
 //#region declarations
 
@@ -60,8 +61,11 @@ const CreateCookieDialog = () => {
 
   useEffect(() => {
     setDisplayActions(!state.hasError);
+  }, [state.hasError]);
+
+  useEffect(() => {
     return () => discardChange(cookieId);
-  }, [discardChange, cookieId, state.hasError]);
+  }, [discardChange, cookieId]);
 
   //#endregion
   //#region handlers
