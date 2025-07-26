@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Cookiri",
+  "version": "1.0.0",
+  "description": "Easily track & manage your brower's cookies.",
+  "permissions": ["cookies", "storage", "activeTab", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Cookiri"
+  },
+  "icons": {
+    "16": "public/icons/icon16.png",
+    "32": "public/icons/icon32.png",
+    "48": "public/icons/icon48.png",
+    "96": "public/icons/icon96.png",
+    "128": "public/icons/icon128.png"
+  }
+}

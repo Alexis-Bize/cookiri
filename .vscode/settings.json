@@ -1,0 +1,15 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "addMissingImports": "explicit",
+    "source.fixAll.eslint": "explicit"
+  },
+  "prettier.configPath": "./.prettierrc.json",
+  "search.exclude": {
+    "node_modules": true,
+    "package-lock.json": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "typescript.preferences.importModuleSpecifier": "shortest",
+  "typescript.preferences.autoImportFileExcludePatterns": ["@radix-ui/*", "radix-ui", "lucide-react"]
+}
