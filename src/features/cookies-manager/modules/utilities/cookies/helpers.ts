@@ -42,14 +42,20 @@ export const loadCurrentDomainCookies = (): Promise<{ domain: string | null; coo
 
       const parentDomain = getParentDomain(url.hostname);
       const dotParentDomain = '.' + parentDomain;
-      const allowedDomains = [url.hostname, parentDomain, dotParentDomain];
+
+      const isRelevantCookie = (cookie: chrome.cookies.Cookie, currentHostname: string) =>
+        cookie.domain === currentHostname ||
+        cookie.domain === getParentDomain(currentHostname) ||
+        cookie.domain === '.' + getParentDomain(currentHostname) ||
+        cookie.domain.endsWith('.' + getParentDomain(currentHostname)) === true ||
+        (cookie.domain.startsWith('.') === true && currentHostname.endsWith(cookie.domain.slice(1)) === true);
 
       chrome.cookies.getAll({ domain: url.hostname }, cookies1 => {
         chrome.cookies.getAll({ domain: parentDomain }, cookies2 => {
           chrome.cookies.getAll({ domain: dotParentDomain }, cookies3 => {
             const allCookies = [...cookies1, ...cookies2, ...cookies3].filter(
               (cookie, index, self) =>
-                allowedDomains.includes(cookie.domain) &&
+                isRelevantCookie(cookie, url.hostname) &&
                 index ===
                   self.findIndex(c => c.name === cookie.name && c.domain === cookie.domain && c.path === cookie.path),
             );
@@ -91,9 +97,7 @@ export const loadCurrentDomainCookies = (): Promise<{ domain: string | null; coo
                 const nameComparison = a.cookie.name.localeCompare(b.cookie.name);
                 if (nameComparison !== 0) {
                   return nameComparison;
-                }
-
-                return a.originalIndex - b.originalIndex;
+                } else return a.originalIndex - b.originalIndex;
               })
               .map(({ cookie }) => cookie);
 

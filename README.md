@@ -20,12 +20,14 @@ A Chrome extension that allows you to easily track and manage your browser's coo
 ### Installation
 
 1. Clone this repository
-2. Run `npm install` to install dependencies
-3. Run `npm run build` to build the extension
+2. Run `pnpm install` to install dependencies
+3. Run `pnpm run build` to build the extension
 4. Load the `dist` folder as an unpacked extension in Chrome:
    - Go to `chrome://extensions/`
    - Enable "Developer mode"
    - Click "Load unpacked" and select the `dist` folder
+
+Alternatively, you could, of course, use `npm`, `yarn`, or whatever.
 
 ### Using the Extension
 
